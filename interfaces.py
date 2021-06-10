@@ -3,6 +3,13 @@ from kivymd.app import MDApp
 from kivymd.uix.button import MDRectangleFlatButton
 from kivy.lang import Builder
 
+import speech_recognition as sr
+import pyttsx3
+def SpeakText(command):
+    engine = pyttsx3.init()
+    engine.say(command)
+    engine.runAndWait()
+
 class LoginScreen(MDApp):
     def build(self):
         return Builder.load_file("loginScreen.kv")
@@ -10,6 +17,7 @@ class LoginScreen(MDApp):
 class MainApp(MDApp):
     def build(self):
         #self.theme_cls.primary_palette = "BlueGray"
+        SpeakText("what is your user name ?")
         return Builder.load_file("login.kv")
 
     def logger(self):
