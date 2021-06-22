@@ -50,7 +50,8 @@ class AT_Button(AT_IApp, AT_ITransform):
         action = self.__actualAction
         if event.type == MOUSEBUTTONDOWN:
             if event.button == 1:
-                action = "pressed"
+                if self.__rectangleBouton.isContain(Vector2D(event.pos[0], event.pos[1])) == True:
+                    action = "pressed"
         elif event.type == MOUSEBUTTONUP:
             if event.button == 1:
                 if self.__rectangleBouton.isContain(Vector2D(event.pos[0], event.pos[1])) == True:
@@ -84,9 +85,9 @@ class AT_Button(AT_IApp, AT_ITransform):
         w = self.__rectangleBouton.getSize().getW()
         h = self.__rectangleBouton.getSize().getH()
 
-        if self.__drawText.getSize().getW() >= self.__rectangleBouton.getSize().getW():
+        if self.__drawText.getSize().getW() >= self.__rectangleBouton.getSize().getW() - 10:
             w = self.__drawText.getSize().getW() + 10
-        if self.__drawText.getSize().getH() >= self.__rectangleBouton.getSize().getH():
+        if self.__drawText.getSize().getH() >= self.__rectangleBouton.getSize().getH() - 10:
             h = self.__drawText.getSize().getH() + 10
 
         self.__rectangleBouton.setSize(Size2D(w, h))
