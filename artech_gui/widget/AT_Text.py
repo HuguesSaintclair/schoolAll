@@ -20,14 +20,29 @@ class AT_Text(AT_IApp, AT_ITransform):
         self.__bold = False
         self.__underline = False
 
+        self.__style = "text"
         self.__charPositions = []
         self.__initFont()
 
         self.__background = False
         self.__area = self.__text_draw.get_rect()
+        self.__conserve_text = self.__text
 
     def activateBg(self, activate_or_desactivate):
         self.__background = activate_or_desactivate
+
+    def getStyle(self):
+        return self.__style
+
+    def setStyle(self, style):
+        if style.lower() == "password":
+            self.__style = style
+            self.__text = "*"*len(self.__text)
+        else:
+            self.__style = "text"
+            self.__text = self.__conserve_text
+
+        self.__initFont()
 
     def isBgActivate(self):
         return self.__background
@@ -68,7 +83,7 @@ class AT_Text(AT_IApp, AT_ITransform):
         for i, pos in enumerate(self.__charPositions):
             if position <= pos:
                 return i
-        return i
+        return len(self.__text)
 
     def getWidth(self, index):
         if index >= 0 and index < len(self.__text):
@@ -91,10 +106,11 @@ class AT_Text(AT_IApp, AT_ITransform):
 
     def setText(self, text):
         self.__text = text
-        self.__initFont()
+        self.__conserve_text = text
+        self.setStyle(self.__style)
 
     def getText(self):
-        return self.__text
+        return self.__conserve_text
 
     def draw(self, screen):
         if self.__background:

@@ -24,7 +24,7 @@ class AT_Rectangle(AT_IApp, AT_ITransform):
         if self.__border > 0:
             pygame.draw.rect(screen, color=self.__borderColor, rect=(x, y, self.__size.getW(), self.__size.getH()), width=self.__border, border_radius=self.__borderRadius)
 
-    def betBorderRadius(self):
+    def setBorderRadius(self):
         return self.__borderRadius
 
     def setBorderRadius(self, value):
@@ -74,8 +74,8 @@ class AT_Rectangle(AT_IApp, AT_ITransform):
 
     def isContain(self, value):
         if type(value) == Vector2D:
-            if value.getX() >= 0 and self.getPosition().getX() + self.getSize().getW() > value.getX() and \
-               value.getY() >= 0 and self.getPosition().getY() + self.getSize().getH() > value.getY():
+            if value.getX() >= self.getPosition().getX() and self.getPosition().getX() + self.getSize().getW() > value.getX() and \
+               value.getY() >= self.getPosition().getY() and self.getPosition().getY() + self.getSize().getH() > value.getY():
                 return True
             return False
         return False

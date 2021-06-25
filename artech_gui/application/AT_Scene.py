@@ -44,4 +44,7 @@ class AT_Scene():
             if name.lower() == "color":
                 self.__backgroundType = "color"
                 self.__background[self.__backgroundType] = value
+
+    def finish(self):
+        pass
 #from artech_gui.application.artech_application import AT_Application
