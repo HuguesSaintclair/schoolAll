@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 from artech_gui.event.AT_Event import AT_Event
 from artech_gui.event.AT_WindowEvent import AT_WindowEvent
+from artech_gui.maths.AT_Coord import Vector2D, Size2D
 
 class AT_Application(AT_WindowEvent):
     def __init__(self):
@@ -21,6 +22,14 @@ class AT_Application(AT_WindowEvent):
         self.__event.addEvent(self)
 
         pygame.display.set_caption(self.__title)
+
+        self.__responsive = {}
+
+    def addSignal(self, name, callBack):
+        self.__responsive[name] = callBack
+
+    def getSize(self):
+        return Size2D(self.__width, self.__height)
 
     def __int__(self, title, width, height):
         pygame.display.set_caption(self.__title)
@@ -112,6 +121,7 @@ class AT_Application(AT_WindowEvent):
             #pygame.draw.circle(self.__screen, (255, 255, 255), (100, 100), 10)
 
             pygame.display.update()
+        self.finish()
         pygame.quit()
 
     def QUIT(self, event):
@@ -122,6 +132,9 @@ class AT_Application(AT_WindowEvent):
         self.__height = event.h
 
         self.__updateScreen()
+
+        for key in self.__responsive.keys():
+            self.__responsive[key](event)
 
     def __updateScreen(self):
         tmp_screen = self.__screen
@@ -145,3 +158,7 @@ class AT_Application(AT_WindowEvent):
     def update(self, screen):
         if self.__actual_scene >= 0 and self.__actual_scene < len(self.__scene):
             self.__scene[self.__actual_scene].update(screen)
+
+    def finish(self):
+        if self.__actual_scene >= 0 and self.__actual_scene < len(self.__scene):
+            self.__scene[self.__actual_scene].finish()

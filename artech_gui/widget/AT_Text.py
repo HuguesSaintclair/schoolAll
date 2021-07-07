@@ -15,21 +15,80 @@ class AT_Text(AT_IApp, AT_ITransform):
         self.__position = Vector2D()
         self.__rectangle = AT_Rectangle()
 
+        self.__backgroundImage = None
+        self.__italic = False
+        self.__bold = False
+        self.__underline = False
+
+        self.__style = "text"
+        self.__charPositions = []
         self.__initFont()
 
         self.__background = False
+        self.__area = self.__text_draw.get_rect()
+        self.__conserve_text = self.__text
 
     def activateBg(self, activate_or_desactivate):
         self.__background = activate_or_desactivate
+
+    def getStyle(self):
+        return self.__style
+
+    def setStyle(self, style):
+        if style.lower() == "password":
+            self.__style = style
+            self.__text = "*"*len(self.__text)
+        else:
+            self.__style = "text"
+            self.__text = self.__conserve_text
+
+        self.__initFont()
 
     def isBgActivate(self):
         return self.__background
 
     def __initFont(self):
         self.__font = pygame.font.Font(self.__fontName, self.__fontSize)
-        self.__text_draw = self.__font.render(self.__text, True, self.__color)
+        self.__font.set_bold(self.__bold)
+        self.__font.set_italic(self.__italic)
+        self.__font.set_underline(self.__underline)
+        self.__text_draw = self.__font.render(self.__text, True, self.__color, self.__backgroundImage)
         self.__size = Size2D(w=self.__text_draw.get_rect().w, h=self.__text_draw.get_rect().h)
         self.__rectangle.setSize(self.__size)
+
+        self.__setCharPositions()
+        self.__area = self.__text_draw.get_rect()
+
+    def getArea(self):
+        return self.__area
+
+    def setArea(self, x, y, w, h):
+        if x != None:
+            self.__area.x = x
+        if y != None:
+            self.__area.y = y
+        if w != None:
+            self.__area.w = w
+        if h != None:
+            self.__area.h = h
+
+    def __setCharPositions(self):
+        self.__charPositions.clear()
+        self.__charPositions = []
+        for i in range(len(self.__text)):
+            w, h = self.__font.size(self.__text[:i + 1])
+            self.__charPositions.append(w)
+
+    def getCharIndex(self, position):
+        for i, pos in enumerate(self.__charPositions):
+            if position <= pos:
+                return i
+        return len(self.__text)
+
+    def getWidth(self, index):
+        if index >= 0 and index < len(self.__text):
+            return self.__charPositions[index]
+        return 0
 
     def getFontName(self):
         return self.__fontName
@@ -47,15 +106,16 @@ class AT_Text(AT_IApp, AT_ITransform):
 
     def setText(self, text):
         self.__text = text
-        self.__initFont()
+        self.__conserve_text = text
+        self.setStyle(self.__style)
 
     def getText(self):
-        return self.__text
+        return self.__conserve_text
 
     def draw(self, screen):
         if self.__background:
             self.__rectangle.draw(screen)
-        screen.blit(self.__text_draw, (self.__position.getX(), self.__position.getY()))
+        screen.blit(self.__text_draw, (self.__position.getX(), self.__position.getY()), area=self.__area)
 
     def getPosition(self):
         return self.__position
@@ -77,6 +137,13 @@ class AT_Text(AT_IApp, AT_ITransform):
 
     def setBgColor(self, value):
         self.__rectangle.setBgColor(value)
+
+    def setColor(self, color):
+        self.__color = color
+        self.__initFont()
+
+    def getColor(self):
+        return self.__color
 
     def __str__(self):
         return "Text({}, {})".format(self.__position, self.__size)

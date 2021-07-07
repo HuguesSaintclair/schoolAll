@@ -11,8 +11,6 @@ class AT_Button(AT_IApp, AT_ITransform):
         self.__rectangleBouton = AT_Rectangle()
         self.__textBouton = AT_Text()
         self.__textBouton.setText("Click Me")
-        self.__drawText = AT_Text()
-        self.__drawText.setText(self.__textBouton.getText())
 
         self.__rectangleBouton.setSize(Size2D(200, 60))
 
@@ -50,7 +48,8 @@ class AT_Button(AT_IApp, AT_ITransform):
         action = self.__actualAction
         if event.type == MOUSEBUTTONDOWN:
             if event.button == 1:
-                action = "pressed"
+                if self.__rectangleBouton.isContain(Vector2D(event.pos[0], event.pos[1])) == True:
+                    action = "pressed"
         elif event.type == MOUSEBUTTONUP:
             if event.button == 1:
                 if self.__rectangleBouton.isContain(Vector2D(event.pos[0], event.pos[1])) == True:
@@ -71,7 +70,7 @@ class AT_Button(AT_IApp, AT_ITransform):
 
     def draw(self, screen):
         self.__rectangleBouton.draw(screen)
-        self.__drawText.draw(screen)
+        self.__textBouton.draw(screen)
 
     def setPosition(self, position):
         self.__rectangleBouton.setPosition(position)
@@ -84,26 +83,24 @@ class AT_Button(AT_IApp, AT_ITransform):
         w = self.__rectangleBouton.getSize().getW()
         h = self.__rectangleBouton.getSize().getH()
 
-        if self.__drawText.getSize().getW() >= self.__rectangleBouton.getSize().getW():
-            w = self.__drawText.getSize().getW() + 10
-        if self.__drawText.getSize().getH() >= self.__rectangleBouton.getSize().getH():
-            h = self.__drawText.getSize().getH() + 10
+        if self.__textBouton.getSize().getW() >= self.__rectangleBouton.getSize().getW() - 10:
+            w = self.__textBouton.getSize().getW() + 10
+        if self.__textBouton.getSize().getH() >= self.__rectangleBouton.getSize().getH() - 10:
+            h = self.__textBouton.getSize().getH() + 10
 
         self.__rectangleBouton.setSize(Size2D(w, h))
 
-        x = self.__rectangleBouton.getPosition().getX() + (self.__rectangleBouton.getSize().getW() - self.__drawText.getSize().getW())/2
-        y = self.__rectangleBouton.getPosition().getY() + (self.__rectangleBouton.getSize().getH() - self.__drawText.getSize().getH())/2
+        x = self.__rectangleBouton.getPosition().getX() + (self.__rectangleBouton.getSize().getW() - self.__textBouton.getSize().getW())/2
+        y = self.__rectangleBouton.getPosition().getY() + (self.__rectangleBouton.getSize().getH() - self.__textBouton.getSize().getH())/2
 
-        self.__drawText.setPosition(Vector2D(x, y))
+        self.__textBouton.setPosition(Vector2D(x, y))
 
     def setFontName(self, name):
         self.__textBouton.setFontName(name)
-        self.__drawText.setFontName(name)
         self.__confineText()
 
     def setFontSize(self, size):
         self.__textBouton.setFontSize(size)
-        self.__drawText.setFontSize(size)
         self.__confineText()
 
     def getFontSize(self):
@@ -111,3 +108,17 @@ class AT_Button(AT_IApp, AT_ITransform):
 
     def getFontName(self):
         return self.__textBouton.getFontName()
+
+    def setText(self, text):
+        self.__textBouton.setText(text)
+        self.__confineText()
+
+    def getText(self):
+        return self.__textBouton.getText()
+
+    def getSize(self):
+        return self.__rectangleBouton.getSize()
+
+    def setSize(self, size):
+        self.__rectangleBouton.setSize(size)
+        self.__confineText()
