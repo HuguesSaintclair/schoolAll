@@ -1,0 +1,1 @@
+java -jar SchoolForAll.jar

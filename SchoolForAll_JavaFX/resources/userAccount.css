@@ -1,0 +1,66 @@
+.root{
+    -fx-background-color: #FFF;
+}
+
+.side-navbar{
+    -fx-background-color: #CC6600;
+    //-fx-background-color: rgb(0, 162, 232);
+}
+
+.top-navbar{
+    //-fx-background-color: rgb(50, 50, 50);
+    -fx-background-color: rgb(0, 98, 140);
+}
+
+.side-btn{
+    -fx-background-color: transparent;
+    -fx-border-width: 0px;
+    -fx-border-radius: 0px;
+}
+
+.side-btn:selected{
+    -fx-background-color: #db9d5e;
+    //-fx-background-color: rgb(0, 98, 140);
+    -fx-border-width: 0px;
+    -fx-border-radius: 0px;
+}
+
+.side-btn:hover{
+    -fx-background-color: #ff8c00;
+    //-fx-background-color: rgb(0, 131, 187);
+    -fx-border-width: 0px;
+    -fx-border-radius: 0px;
+}
+
+.top-btn{
+    //-fx-background-color: rgb(80, 80, 80);
+    -fx-background-color: rgb(0, 131, 187);
+    -fx-background-radius: 100%;
+    -fx-border-width: 0px;
+}
+
+.noti-num{
+    -fx-background-color: #F02E54;
+    -fx-background-radius: 100%;
+    -fx-text-fill: #FFF;
+}
+
+.textField-search{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-border-color: rgb(0, 162, 232);
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+.sous-menu-gauche{
+    -fx-background-color: #db9d5e;
+}
+
+.sous-menu-haut{
+    -fx-background-color: rgb(0, 98, 140);
+}
+
+.smt-btn{
+    -fx-background-color: transparent;
+    -fx-border-color: rgb(0, 108, 155);
+    -fx-border-width: 0px 0px 2px 0px;
+}

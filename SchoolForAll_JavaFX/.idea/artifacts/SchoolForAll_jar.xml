@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SchoolForAll:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SchoolForAll_jar</output-path>
+    <root id="archive" name="SchoolForAll.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="SchoolForAll" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/icons/ikonli-core-12.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/icons/ikonli-javafx-12.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/jfoenix-8.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/jfoenix-9.0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/icons/ikonli-fontawesome-pack-12.2.0.jar" path-in-jar="/" />
+      <element id="library" level="project" name="javafx-jmods-16" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/javafx-sdk-16/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/javafx-sdk-16/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/javafx-sdk-16/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/javafx-sdk-16/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/javafx-sdk-16/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/javafx-sdk-16/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/javafx-sdk-16/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../JavaFX/javafx-sdk-16/lib/javafx.graphics.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

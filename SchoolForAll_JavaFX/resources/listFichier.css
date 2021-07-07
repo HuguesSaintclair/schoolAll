@@ -1,0 +1,14 @@
+.root{
+    -fx-background-color: #db9d5e;
+    //-fx-background-color: rgb(0, 98, 140);
+}
+
+.title{
+    -fx-border-color: rgb(0, 63, 89);
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+.content{
+    -fx-border-color: #FFF;
+    -fx-border-width: 0px 0px 2px 0px;
+}

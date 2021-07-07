@@ -1,0 +1,50 @@
+.parent{
+    -fx-background-color: #F5F5F7;
+}
+
+.sidebar{
+    -fx-background-color: rgb(0, 162, 232);
+}
+
+.fontIcon{
+    -fx-fill:grey;
+}
+
+.noti-num{
+    -fx-background-color: #F02E54;
+    -fx-background-radius: 100%;
+    -fx-text-fill: #FFF;
+}
+
+.sidebar-bouton{
+    -fx-background-color: transparent;
+}
+
+.sidebar-bouton: pressed{
+    -fx-background-color: rgb(47, 192, 255);
+    -fx-border-color: rgb(232, 0, 104);
+    -fx-border-width: 0px 0px 0px 4px;
+}
+
+.sidebar-bouton: hover{
+    -fx-border-color: #FFF;
+    -fx-border-width: 0px 0px 0px 4px;
+}
+
+.top-nav{
+    -fx-background-color: #FFF;
+}
+
+.pane{
+    -fx-background-color: rgb(47, 192, 255);
+}
+
+.titled-pane > .title{
+    -fx-background-color: white;
+    -fx-border-color:grey;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-font-family: "fa-close";
+    -fx-pref-height:40px;
+    -fx-max-height:40px;
+    -fx-min-height:40px;
+}

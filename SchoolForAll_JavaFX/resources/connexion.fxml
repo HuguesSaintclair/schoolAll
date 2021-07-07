@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolforall.Connexion">
+<left>
+    <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: rgb(0, 162, 232);" BorderPane.alignment="CENTER">
+        <children>
+            <Text fill="WHITE" layoutX="24.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SCHOOL FOR ALL">
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="34.0" />
+                </font>
+            </Text>
+            <Label layoutX="60.0" layoutY="270.0" text="School for all is a cross plateform to learn ..." textAlignment="JUSTIFY" textFill="WHITE" />
+            <Button layoutX="86.0" layoutY="448.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="25.0" prefWidth="179.0" style="-fx-background-color: rgb(119, 215, 255);" text="Create Account" textFill="WHITE" />
+            <FontIcon iconColor="WHITE" iconLiteral="fa-book" iconSize="80" layoutX="138.0" layoutY="206.0" />
+        </children>
+    </AnchorPane>
+</left>
+   <center>
+    <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
+        <children>
+            <Button layoutX="310.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="19.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#00a2e8">
+               <graphic>
+                  <FontIcon fill="#00a2e8" iconLiteral="fa-close" iconSize="20" />
+               </graphic></Button>
+            <TextField layoutX="92.0" layoutY="204.0" prefHeight="30.0" prefWidth="200.0" promptText="Email or User Name" style="-fx-background-color: rgb(240, 240, 240); -fx-border-color: rgb(0, 162, 232); -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField layoutX="92.0" layoutY="263.0" prefHeight="30.0" prefWidth="200.0" promptText="PassWord" style="-fx-background-color: rgb(240, 240, 240); -fx-border-color: rgb(0, 162, 232); -fx-border-width: 0px 0px 2px 0px;" />
+            <Button layoutX="110.0" layoutY="348.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: rgb(0, 162, 232);" text="Login" textFill="WHITE" />
+            <Hyperlink layoutX="108.0" layoutY="445.0" onAction="#forgotPassWord" text="Forgot Your Password ?" textFill="#00a1e5" underline="true" />
+            <Text fill="#00a1e5" layoutX="113.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login">
+                <font>
+                    <Font size="26.0" />
+                </font>
+            </Text>
+            <FontIcon iconColor="#00a2e8" iconLiteral="fa-key" iconSize="20" layoutX="65.0" layoutY="285.0" />
+            <FontIcon iconColor="#00a2e8" iconLiteral="fa-user" iconSize="20" layoutX="68.0" layoutY="226.0" />
+            <FontIcon iconColor="#00a2e8" iconLiteral="fa-users" iconSize="50" layoutX="148.0" layoutY="110.0" />
+        </children>
+    </AnchorPane>
+   </center>
+</BorderPane>

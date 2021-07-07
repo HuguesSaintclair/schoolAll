@@ -1,0 +1,13 @@
+.root{
+    -fx-background-image : url('Images/pexels.jpg');
+    -fx-background-size: contain, contain, contain, contain, contain, contain, contain, contain;
+    -fx-background-repeat: none, none, none, none, none, none, none, none;
+}
+
+.btn-tes{
+    -fx-background-color: rgb(0, 162, 232);
+}
+
+.card-test{
+    -fx-background-color: #FFF;
+}

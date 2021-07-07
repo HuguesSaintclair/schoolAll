@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" styleClass="root" stylesheets="@styleSing.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolforall.ConnectionScreen">
+   <children>
+      <Text fill="WHITE" layoutX="228.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="School For All" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" offsetX="1.0" offsetY="1.0" />
+         </effect>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="W_RESIZE" />
+         </cursor>
+      </Text>
+   </children>
+</AnchorPane>

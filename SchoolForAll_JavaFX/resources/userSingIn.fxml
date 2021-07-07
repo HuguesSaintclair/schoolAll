@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane prefHeight="500.0" prefWidth="700.0" stylesheets="@userSingIn.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolforall.UserSingIn">
+   <center>
+      <AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="card-test" BorderPane.alignment="CENTER">
+         <children>
+            <Polygon fill="DODGERBLUE" points="171.0, 40.0, 514.0, 440.0, 514.0, 40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <TextField layoutX="63.0" layoutY="159.0" prefHeight="32.0" prefWidth="260.0" promptText="User Email" />
+            <JFXCheckBox layoutX="63.0" layoutY="258.0" text="ce souvenir e moi" />
+            <Hyperlink layoutX="194.0" layoutY="255.0" text="Mot de passe oublier ?" />
+            <JFXButton layoutX="208.0" layoutY="296.0" prefHeight="32.0" prefWidth="119.0" ripplerFill="#004dff" styleClass="btn-tes" text="Connection" textFill="WHITE" />
+            <Text layoutX="36.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inscrivez vous depuis" />
+            <JFXButton layoutX="168.0" layoutY="355.0" prefHeight="30.0" prefWidth="30.0" styleClass="btn-tes" text=".">
+               <graphic>
+                  <FontIcon iconColor="RED" iconLiteral="fa-google" iconSize="20" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="228.0" layoutY="353.0" prefHeight="30.0" prefWidth="30.0" styleClass="btn-tes" text=".">
+               <graphic>
+                  <FontIcon iconColor="#1200ff" iconLiteral="fa-facebook" iconSize="20" />
+               </graphic>
+            </JFXButton>
+            <Text layoutX="36.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connection">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="40.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Si vous n'avez pas de compte crée un facilement" wrappingWidth="230.8017578125">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="464.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenu.">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="355.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SCHOLL FOR ALL">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="26.0" />
+               </font>
+            </Text>
+            <PasswordField layoutX="64.0" layoutY="209.0" prefHeight="32.0" prefWidth="259.0" promptText="User Password" />
+            <FontIcon iconColor="#437cee" iconLiteral="fa-user" iconSize="30" layoutX="29.0" layoutY="185.0" />
+            <FontIcon iconColor="#437cee" iconLiteral="fa-key" iconSize="30" layoutX="25.0" layoutY="235.0" />
+         </children>
+         <effect>
+            <DropShadow height="50.0" radius="24.5" width="50.0">
+               <color>
+                  <Color red="0.7631579041481018" green="0.7631579041481018" blue="0.7631579041481018" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+   </center>
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+</BorderPane>

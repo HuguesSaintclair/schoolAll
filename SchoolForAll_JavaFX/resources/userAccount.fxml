@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" stylesheets="@userAccount.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolforall.UserAccount">
+   <children>
+      <AnchorPane layoutX="344.0" layoutY="115.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <ScrollPane fx:id="centralPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sousMenuGauche" layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="200.0" styleClass="sous-menu-gauche" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <ScrollPane fx:id="contentSidNav" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" styleClass="sous-menu-gauche" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="topSousNav" prefHeight="200.0" prefWidth="150.0" styleClass="sous-menu-haut" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <Button alignment="TOP_LEFT" layoutY="2.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="40.0" styleClass="smt-btn" text="Nom Prenom" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-user-circle" iconSize="30" />
+               </graphic>
+            </Button>
+            <Button layoutY="120.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="40.0" styleClass="smt-btn" text="Aide" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Button layoutY="40.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="40.0" styleClass="smt-btn" text="Modifier Profil" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Button alignment="TOP_LEFT" layoutX="8.0" layoutY="40.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#deconnexion" prefHeight="26.0" prefWidth="150.0" styleClass="smt-btn" text="Sorti" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-sign-out" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button layoutY="80.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="40.0" styleClass="smt-btn" text="Consulter mes notes" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="50.0" styleClass="side-navbar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ToggleButton layoutX="-19.0" layoutY="89.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="30.0" styleClass="side-btn" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-home" iconSize="25" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton layoutY="96.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#subMenuFiles" prefHeight="30.0" styleClass="side-btn" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-file-text" iconSize="20" />
+               </graphic>
+               <toggleGroup>
+                  <ToggleGroup fx:id="side_btn" />
+               </toggleGroup>
+            </ToggleButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="89.0" prefHeight="15.0" prefWidth="15.0" styleClass="noti-num" text="2" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="6.0">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <ToggleButton layoutX="8.0" layoutY="137.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#subMenuDocs" prefHeight="30.0" styleClass="side-btn" toggleGroup="$side_btn" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-folder" iconSize="20" />
+               </graphic>
+            </ToggleButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="130.0" prefHeight="15.0" prefWidth="15.0" styleClass="noti-num" text="2" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="6.0">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <ToggleButton layoutX="8.0" layoutY="176.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#subMenuUser" prefHeight="30.0" styleClass="side-btn" toggleGroup="$side_btn" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-address-book" iconSize="20" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton layoutX="10.0" layoutY="213.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#subMenuPlanif" prefHeight="30.0" styleClass="side-btn" toggleGroup="$side_btn" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-clock-o" iconSize="20" />
+               </graphic>
+            </ToggleButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="206.0" prefHeight="15.0" prefWidth="15.0" styleClass="noti-num" text="2" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="6.0">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <Separator layoutX="-75.0" layoutY="464.0" opacity="0.54" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <ToggleButton layoutY="380.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="30.0" styleClass="side-btn" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-gear" iconSize="20" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton layoutX="8.0" layoutY="409.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="30.0" styleClass="side-btn" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-question-circle" iconSize="20" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton layoutX="2.0" layoutY="456.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#deconnexion" prefHeight="50.0" prefWidth="50.0" styleClass="side-btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <FontIcon iconLiteral="fa-sign-out" iconSize="30">
+                     <iconColor>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </iconColor>
+                  </FontIcon>
+               </graphic>
+            </ToggleButton>
+            <Text fill="WHITE" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SFA" textAlignment="CENTER" wrappingWidth="50.0" AnchorPane.bottomAnchor="457.9375" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.2890625">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Separator opacity="0.31" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+      <AnchorPane layoutX="50.0" prefHeight="50.0" prefWidth="650.0" styleClass="top-navbar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ToggleButton layoutX="559.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" styleClass="top-btn" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="8.0">
+               <graphic>
+                  <FontIcon iconColor="#f8f8f8" iconLiteral="fa-bell" iconSize="20" />
+               </graphic>
+            </ToggleButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="583.0" layoutY="5.0" prefHeight="15.0" prefWidth="15.0" styleClass="noti-num" text="8" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <TextField layoutX="14.0" layoutY="13.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="220.0" promptText="Recherche" styleClass="textField-search" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="12.0" />
+            <ToggleButton layoutX="230.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="30.0" styleClass="side-btn" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-search" iconSize="20" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton layoutX="499.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" styleClass="top-btn" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="8.0">
+               <graphic>
+                  <FontIcon iconColor="#f8f8f8" iconLiteral="fa-envelope" iconSize="20" />
+               </graphic>
+            </ToggleButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="533.0" layoutY="7.0" prefHeight="15.0" prefWidth="15.0" styleClass="noti-num" text="2" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="7.0">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <ToggleButton contentDisplay="CENTER" layoutX="600.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#topSousNavDerouler" prefHeight="34.0" prefWidth="34.0" styleClass="top-btn" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="8.0">
+               <graphic>
+                  <FontIcon fx:id="topFleche" iconColor="#f8f8f8" iconLiteral="fa-chevron-circle-left" iconSize="20" strokeLineCap="ROUND" strokeLineJoin="ROUND" textAlignment="CENTER" />
+               </graphic>
+            </ToggleButton>
+         </children>
+         <effect>
+            <DropShadow radius="4.75" width="0.0" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

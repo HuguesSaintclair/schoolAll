@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane prefHeight="580.0" prefWidth="780.0" styleClass="parent" stylesheets="@studentStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolforall.StudentAccount">
+   <children>
+      <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="100.0" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="15.0" layoutY="14.0" prefHeight="29.0" prefWidth="51.0" text="SFA" textAlignment="CENTER" textFill="GREY" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <Accordion AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+              <panes>
+                <TitledPane alignment="BASELINE_CENTER" animated="false" collapsible="false" expanded="false" styleClass="pane" text="Home" />
+                  <TitledPane alignment="BASELINE_CENTER" prefHeight="200.0" prefWidth="200.0" styleClass="pane" text="Cours">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </content>
+                  </TitledPane>
+                  <TitledPane alignment="BASELINE_CENTER" prefHeight="200.0" prefWidth="200.0" styleClass="pane" text="Fiches">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <HBox alignment="CENTER" layoutX="1.0" layoutY="68.0" prefHeight="40.0" prefWidth="80.0" styleClass="sidebar-bouton" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <FontIcon iconLiteral="fa-home" iconSize="30" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="1.0" layoutY="118.0" prefHeight="40.0" prefWidth="80.0" styleClass="sidebar-bouton" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <FontIcon iconLiteral="fa-inbox" iconSize="30" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="15.0" styleClass="noti-num" text="2" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="1.0" layoutY="168.0" prefHeight="40.0" prefWidth="80.0" styleClass="sidebar-bouton" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <FontIcon iconLiteral="fa-book" iconSize="30" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="15.0" styleClass="noti-num" text="2" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="1.0" layoutY="218.0" prefHeight="40.0" prefWidth="80.0" styleClass="sidebar-bouton" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <FontIcon iconLiteral="fa-file" iconSize="30" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="15.0" styleClass="noti-num" text="2" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="8.0" layoutY="461.0" prefHeight="40.0" prefWidth="80.0" styleClass="sidebar-bouton" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <FontIcon iconLiteral="fa-sign-out" iconSize="30" />
+               </children>
+            </HBox>
+            <Circle fill="#c1c7cd" layoutX="40.0" layoutY="546.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="80.0" prefHeight="60.0" prefWidth="700.0" styleClass="top-nav" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FontIcon iconLiteral="fa-question-circle" iconSize="20" layoutX="528.0" layoutY="37.0" styleClass="fontIcon" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0" />
+            <FontIcon iconLiteral="fa-gear" iconSize="20" layoutX="453.0" layoutY="37.0" styleClass="fontIcon" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="25.0" />
+            <FontIcon iconLiteral="fa-bell" iconSize="20" layoutX="396.0" layoutY="37.0" styleClass="fontIcon" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="25.0" />
+            <FontIcon iconLiteral="fa-search" iconSize="20" layoutX="362.0" layoutY="37.0" styleClass="fontIcon" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="25.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="613.0" layoutY="18.0" prefHeight="15.0" prefWidth="15.0" styleClass="noti-num" text="2" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" radius="4.75" width="0.0" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

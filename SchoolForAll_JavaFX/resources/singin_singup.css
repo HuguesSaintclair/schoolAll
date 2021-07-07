@@ -1,0 +1,12 @@
+.root{
+    -fx-background-image : url('Images/pexels-aleksandar-pasaric-325185.jpg');
+    -fx-background-size: contain;
+    -fx-background-repeat:none;
+}
+
+.card{
+    //-fx-background-color: rgb(0, 162, 232);
+    -fx-background-image : url('Images/pexels-dominika-roseclay-4300393.jpg');
+    -fx-background-size: contain;
+    -fx-background-repeat:none;
+}
